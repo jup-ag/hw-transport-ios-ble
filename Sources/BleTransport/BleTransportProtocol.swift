@@ -19,7 +19,10 @@ public typealias ErrorResponse = ((Error)->())
 public protocol BleTransportProtocol {
     
     static var shared: BleTransportProtocol { get }
-    
+
+	/// Start Bluetooth module. This must be called before another other operations.
+	func start()
+
     var isBluetoothAvailable: Bool { get }
     var isConnected: Bool { get }
     
